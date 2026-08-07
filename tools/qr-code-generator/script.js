@@ -26,13 +26,9 @@ function downloadQR(){
 
     if(canvas){
 
-        const link = document.createElement("a");
+        const dataUrl = canvas.toDataURL("image/png");
 
-        link.download = "oakstack-qr-code.png";
-
-        link.href = canvas.toDataURL("image/png");
-
-        link.click();
+        window.open(dataUrl, "_blank");
 
         return;
     }
@@ -40,14 +36,7 @@ function downloadQR(){
     const img = document.querySelector("#qrcode img");
 
     if(img){
-
-        const link = document.createElement("a");
-
-        link.download = "oakstack-qr-code.png";
-
-        link.href = img.src;
-
-        link.click();
+        window.open(img.src, "_blank");
     }
 
 }
