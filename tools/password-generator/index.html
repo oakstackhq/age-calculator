@@ -3,31 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Password Generator | OakStack HQ</title>
+
+<title>Password Generator - Free Secure Password Generator | OakStack HQ</title>
+
+<meta name="description"
+content="Generate strong, secure random passwords instantly. Customize length and character types with our free password generator.">
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<div class="container">
+<div class="card">
 
 <h1>Password Generator</h1>
 
-<label>Password Length</label>
-<input type="range" id="length" min="8" max="64" value="16">
-<p><span id="lengthValue">16</span> characters</p>
+<p>Create a strong, secure password in seconds.</p>
 
-<label><input type="checkbox" id="uppercase" checked> Uppercase</label>
-<label><input type="checkbox" id="lowercase" checked> Lowercase</label>
-<label><input type="checkbox" id="numbers" checked> Numbers</label>
-<label><input type="checkbox" id="symbols" checked> Symbols</label>
+<label for="length">Password Length</label>
 
-<button onclick="generatePassword()">Generate Password</button>
+<input
+type="range"
+id="length"
+min="8"
+max="64"
+value="16">
 
-<input id="password" readonly>
+<p><strong><span id="lengthValue">16</span></strong> Characters</p>
 
-<button onclick="copyPassword()">Copy Password</button>
+<label><input type="checkbox" id="uppercase" checked> Include Uppercase Letters</label>
 
-<p><a href="/">← Back to OakStack HQ</a></p>
+<label><input type="checkbox" id="lowercase" checked> Include Lowercase Letters</label>
+
+<label><input type="checkbox" id="numbers" checked> Include Numbers</label>
+
+<label><input type="checkbox" id="symbols" checked> Include Symbols</label>
+
+<button onclick="generatePassword()">
+Generate Password
+</button>
+
+<input
+id="password"
+readonly
+placeholder="Your password will appear here">
+
+<button onclick="copyPassword()">
+Copy Password
+</button>
+
+<hr>
+
+<h3>Related Tools</h3>
+
+<ul>
+
+<li><a href="/tools/qr-code-generator/">QR Code Generator</a></li>
+
+<li><a href="/tools/text-case-converter/">Text Case Converter</a></li>
+
+<li><a href="/tools/word-counter/">Word Counter</a></li>
+
+<li><a href="/tools/tip-calculator/">Tip Calculator</a></li>
+
+</ul>
+
+<a class="back-home" href="/">
+← Back to OakStack HQ
+</a>
 
 </div>
 
