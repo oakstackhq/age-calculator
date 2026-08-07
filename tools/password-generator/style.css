@@ -28,7 +28,7 @@ p{
     color:#666;
 }
 
-input{
+input:not([type="checkbox"]):not([type="range"]){
     width:100%;
     padding:16px;
     margin-top:20px;
@@ -36,6 +36,28 @@ input{
     border-radius:8px;
     box-sizing:border-box;
     font-size:16px;
+    text-align:center;
+}
+
+input[type="range"]{
+    width:100%;
+    margin:20px 0;
+    padding:0;
+}
+
+input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    margin:0;
+}
+
+label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:14px;
+    font-weight:600;
+    text-align:left;
 }
 
 button{
@@ -48,6 +70,7 @@ button{
     color:white;
     font-size:17px;
     cursor:pointer;
+    transition:.2s;
 }
 
 button:hover{
@@ -108,4 +131,10 @@ ul a:hover{
 
 .back-home:hover{
     text-decoration:underline;
+}
+
+#password{
+    text-align:center;
+    font-weight:bold;
+    letter-spacing:.5px;
 }
