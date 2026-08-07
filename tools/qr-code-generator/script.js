@@ -2,37 +2,52 @@ let qr;
 
 function generateQR(){
 
-const text=document.getElementById("text").value.trim();
+    const text = document.getElementById("text").value.trim();
 
-if(text===""){
-alert("Enter some text or a URL.");
-return;
-}
+    if(text===""){
+        alert("Enter a URL or text.");
+        return;
+    }
 
-document.getElementById("qrcode").innerHTML="";
+    document.getElementById("qrcode").innerHTML="";
 
-qr=new QRCode(document.getElementById("qrcode"),{
-text:text,
-width:256,
-height:256
-});
+    qr = new QRCode(document.getElementById("qrcode"),{
+        text:text,
+        width:256,
+        height:256
+    });
 
-document.getElementById("download").style.display="block";
-
+    document.getElementById("download").style.display="block";
 }
 
 function downloadQR(){
 
-const img=document.querySelector("#qrcode img");
+    const canvas = document.querySelector("#qrcode canvas");
 
-if(!img)return;
+    if(canvas){
 
-const link=document.createElement("a");
+        const link = document.createElement("a");
 
-link.href=img.src;
+        link.download = "oakstack-qr-code.png";
 
-link.download="oakstack-qr-code.png";
+        link.href = canvas.toDataURL("image/png");
 
-link.click();
+        link.click();
+
+        return;
+    }
+
+    const img = document.querySelector("#qrcode img");
+
+    if(img){
+
+        const link = document.createElement("a");
+
+        link.download = "oakstack-qr-code.png";
+
+        link.href = img.src;
+
+        link.click();
+    }
 
 }
